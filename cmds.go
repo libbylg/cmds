@@ -31,6 +31,12 @@ var (
 )
 
 func init() {
+	Clear()
+}
+
+//	Clear	用来清除所有已经注册的指令。
+//	执行完Clear函数之后，所有的全局变量将被重置。在Clear()函数调用之前的获取的指令将失效。
+func Clear() {
 	CmdList = list.New()
 	CmdsMap = make(map[string]*list.Element)
 	HelpCmd = new(cmdHelp)
